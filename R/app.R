@@ -81,7 +81,7 @@ app_SCRAD <- function() {
 
       # Show a plot of the generated distribution
       mainPanel(
-        DT::dataTableOutput(outputId = "dementiatable"),
+        shiny::dataTableOutput(outputId = "dementiatable"),
         br(),br(),br(),
         textOutput(outputId = "population"),
         tags$head(tags$style("#population{color: black;
@@ -103,7 +103,7 @@ app_SCRAD <- function() {
   # Define server logic required to draw a histogram
   server <- function(input, output) {
 
-    output$dementiatable <- DT::renderDataTable({
+    output$dementiatable <- shiny::renderDataTable({
       req(input$SNPS)
       risk_from_selected_SNPs <- Riesgo %>% filter(Class %in%input$dementia)%>%
         filter(SNPS %in% input$SNPS) %>%
