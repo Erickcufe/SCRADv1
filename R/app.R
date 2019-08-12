@@ -24,6 +24,7 @@
 #' @export app_SCRAD
 app_SCRAD <- function() {
 
+
   Tipos_SNPs<-Data_dementia$SNPS
   Tipos_demencia<-Data_dementia$Class
   Cells<-Data_dementia$Class
